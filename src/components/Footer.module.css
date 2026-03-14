@@ -1,0 +1,12 @@
+.footer {
+  padding: 20px clamp(20px, 5vw, 80px); border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.text { font-family: var(--mono); font-size: .67rem; color: var(--dim); }
+.accent { color: var(--cyan); }
+.socials { display: flex; gap: 12px; }
+.icon {
+  width: 32px; height: 32px; border: 1px solid var(--border); border-radius: 6px;
+  display: flex; align-items: center; justify-content: center; color: var(--muted); transition: all .2s;
+}
+.icon:hover { border-color: var(--border2); color: var(--cyan); }

@@ -1,0 +1,14 @@
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 20px; }
+.group { padding: 26px; background: var(--bg); border: 1px solid var(--border); border-radius: 14px; transition: border-color .22s; }
+.group:hover { border-color: var(--border2); }
+.title {
+  font-family: var(--mono); font-size: .69rem; color: var(--cyan); letter-spacing: .12em;
+  text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+}
+.title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill {
+  padding: 5px 12px; background: rgba(99,220,255,.04); border: 1px solid var(--border);
+  border-radius: 5px; font-size: .8rem; transition: all .18s; cursor: default;
+}
+.pill:hover { background: var(--cyan-dim); border-color: var(--border2); color: var(--cyan); }

@@ -1,0 +1,64 @@
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 64px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(20px, 5vw, 80px);
+  transition: all .3s;
+}
+.scrolled {
+  backdrop-filter: blur(18px);
+  background: rgba(5, 5, 15, .88);
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  font-family: var(--mono); font-size: .92rem; color: var(--cyan);
+  display: flex; align-items: center; gap: 2px; flex-shrink: 0;
+}
+.br { color: var(--dim); }
+.links { display: flex; gap: 28px; list-style: none; }
+.link {
+  font-family: var(--mono); font-size: .72rem; color: var(--muted);
+  letter-spacing: .1em; text-transform: uppercase; transition: color .2s;
+  position: relative; padding-bottom: 3px;
+}
+.link::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 0; height: 1px; background: var(--cyan); transition: width .25s;
+}
+.link:hover, .active { color: var(--cyan); }
+.link:hover::after, .active::after { width: 100%; }
+.right { display: flex; align-items: center; gap: 12px; }
+.badge {
+  display: flex; align-items: center; gap: 6px;
+  padding: 4px 12px; background: rgba(74,222,128,.07); border: 1px solid rgba(74,222,128,.25);
+  border-radius: 100px; font-family: var(--mono); font-size: .65rem; color: var(--green);
+}
+.dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+  animation: blink 1.4s ease infinite;
+}
+.cta {
+  padding: 7px 18px; border: 1px solid var(--border2); border-radius: 4px;
+  font-family: var(--mono); font-size: .72rem; color: var(--cyan);
+  letter-spacing: .08em; transition: all .2s;
+}
+.cta:hover { background: var(--cyan-dim); }
+.hbg { display: none; padding: 6px; color: var(--text); }
+
+/* Mobile menu */
+.mmenu {
+  position: fixed; inset: 0; z-index: 99;
+  background: rgba(5, 5, 15, .97); backdrop-filter: blur(24px);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 32px; transform: translateY(-100%); transition: transform .35s cubic-bezier(.4,0,.2,1);
+}
+.mmenu.open { transform: translateY(0); }
+.mlink {
+  font-family: var(--mono); font-size: 1.1rem; color: var(--muted);
+  letter-spacing: .1em; text-transform: uppercase; transition: color .2s;
+}
+.mlink:hover { color: var(--cyan); }
+
+@media (max-width: 768px) {
+  .links, .badge, .cta { display: none; }
+  .hbg { display: flex; }
+}
